@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="field button-field">
-                            <button onclick="func0()">Login</button>
+                            <button onclick="func0(event)">Login</button>
                         </div>
                          
                     </form>
@@ -58,28 +58,28 @@
                        
 
                         <div class="field input-field">
-                            <input type="text" placeholder="Username" class="username" required >
+                            <input type="text" placeholder="Username" class="username" required  id="username">
                         </div>
                         <div class="field input-field">
-                            <input type="text" placeholder="Firstname" class="firstname" >
+                            <input type="text" placeholder="Firstname" class="firstname"  id="firstname">
                         </div>
                         <div class="field input-field">
-                            <input type="text" placeholder="Lastname" class="lastname" >
+                            <input type="text" placeholder="Lastname" class="lastname" id="lastname">
                         </div>
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input" id="email">
                         </div>
                         <div class="field input-field">
-                            <input type="password" placeholder="Create password" class="password" required>
+                            <input type="password" placeholder="Create password" class="password" id="password" required>
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
                         <div class="field input-field">
-                            <input type="number" placeholder="PriveateNumber" class="privatenumber" minlength="11" >
+                            <input type="number" placeholder="PriveateNumber" class="privatenumber" id="privatenumber" minlength="11" >
                         </div>
                      
                         <div class="field button-field">
-                            <button onclick="func1()">Signup</button>
+                            <button onclick="func1(event)">Signup</button>
                         </div>
                     </form>
 

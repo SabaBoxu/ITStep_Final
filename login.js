@@ -28,21 +28,20 @@ link.addEventListener("click", e => {
 
 
 
-
-
-let password=document.getElementsByClassName('password').value
-let email=document.getElementById('email').value
-let username=document.getElementsByClassName('username').value
-let firstname=document.getElementsByClassName('firstname').value
-let lastname=document.getElementsByClassName('lastname').value
-let privatenumber=document.getElementsByClassName('privatenumber').value
-
 function func0() {
-      fetch('https://kketelauri-001-site1.gtempurl.com/api/user/adduser'), {
-
-        
 
 
+      let password=document.getElementById('password').value
+      let email=document.getElementById('email').value
+      let username=document.getElementById('username').value
+      let firstname=document.getElementById('firstname').value
+      let lastname=document.getElementById('lastname').value
+      let privatenumber=document.getElementById('privatenumber').value
+
+
+
+
+      fetch('https://kketelauri-001-site1.gtempurl.com/api/user/adduser'), {      
 
       method: 'POST',
       headers: {
@@ -50,15 +49,27 @@ function func0() {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify({ 
-          "email": email.value,
-          "password":password.value,
+          "email": email,
+          "password":password,
     })
     .then(response => response.json())
-    .then(response => console.log(JSON.stringify(response)))
+    .then(response => console.log(JSON.stringify(response))),
+    localStorage.setItem('loggedInUser', JSON.stringify(response)),
+    window.location.href = 'index.html'
   }
+  .catch(response=>console.log("error"))
 }
 
-function func1() {
+function func1(event) {
+
+  event.preventDefault()
+
+      let password=document.getElementById('password').value
+      let email=document.getElementById('email').value
+      let username=document.getElementById('username').value
+      let firstname=document.getElementById('firstname').value
+      let lastname=document.getElementById('lastname').value
+      let privatenumber=document.getElementById('privatenumber').value
   
 fetch('https://kketelauri-001-site1.gtempurl.com/api/user/adduser', {
 
@@ -68,14 +79,15 @@ headers: {
     'Content-Type': 'application/json'
 },
 body: JSON.stringify({ 
-    "userName": username.value,
-    "firstName": firstname.value,
-    "lastName": lastname.value,
-    "email": email.value,
-    "privateNumber": privatenumber.value,
-    "password": password.value,
+    "userName": username,
+    "firstName": firstname,
+    "lastName": lastname,
+    "email": email,
+    "privateNumber": privatenumber,
+    "password": password,
     "active": true})
 })
 .then(response => response.json())
 .then(response => console.log(JSON.stringify(response)))
 }
+
